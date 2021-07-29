@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "c8d198b8-3a7a-4039-a64d-4a63ddb02671",
+		"name": "Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createAccount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"accountId\":\"acc-1\",\n    \"balance\":100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:18080/v1/accounts"
+			},
+			"response": []
+		},
+		{
+			"name": "view Account",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:18080/v1/accounts/:accountId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18080",
+					"path": [
+						"v1",
+						"accounts",
+						":accountId"
+					],
+					"variable": [
+						{
+							"key": "accountId",
+							"value": "acc-1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "moneyTransfer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"accountIdFrom\":\"acc-1\",\n    \"accountIdTo\":\"acc-2\",\n    \"amount\":90\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:18080/v1/money/transactions"
+			},
+			"response": []
+		},
+		{
+			"name": "View All Transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:18080/v1/money/transactions"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
